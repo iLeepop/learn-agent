@@ -1,0 +1,11 @@
+## python 
+__pycache__/
+
+## env
+.env
+
+## AI Agent
+.cursor/
+
+## mac os
+.DS_Store
