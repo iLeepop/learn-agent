@@ -1,16 +1,19 @@
 import re
 import os
 
+from dotenv import load_dotenv
 from openai_client import OpenAICompatibleClient
 from prompt import AGENT_SYSTEM_PROMPT
 from tools_reg import available_tools
 
+load_dotenv()
+
 # --- 1. 配置LLM客户端 ---
 # 请根据您使用的服务，将这里替换成对应的凭证和地址
-API_KEY = ""
+API_KEY = os.getenv("API_KEY")
 BASE_URL = "https://api.deepseek.com"
 MODEL_ID = "deepseek-v4-flash"
-TAVILY_API_KEY=""
+TAVILY_API_KEY=os.getenv("TAVILY_API_KEY")
 os.environ['TAVILY_API_KEY'] = TAVILY_API_KEY
 
 llm = OpenAICompatibleClient(
